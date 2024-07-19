@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Meowify",
+    "version": "1.0",
+    "description": "Replaces all text on a webpage with 'meow' phrases and adds a cat image.",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+    {
+      "resources": ["libs/confetti.browser.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+  }
+  
