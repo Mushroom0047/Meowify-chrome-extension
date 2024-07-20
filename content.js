@@ -1,25 +1,47 @@
 //silence
 if (typeof confetti === 'function') {
-    var duration = 15 * 1000;
-    var animationEnd = Date.now() + duration;
-    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    confettiPrinter()
 
-    function randomInRange(min, max) {
-    return Math.random() * (max - min) + min;
-    }
-
-    var interval = setInterval(function() {
-    var timeLeft = animationEnd - Date.now();
-
-    if (timeLeft <= 0) {
-        return clearInterval(interval);
-    }
-
-    var particleCount = 50 * (timeLeft / duration);
-    // since particles fall down, start a bit higher than random
-    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-    }, 250);
   } else {
     console.error('Confetti library not loaded');
+  }
+
+  function confettiPrinter(){
+    let scalar = 2;
+    let unicorn = confetti.shapeFromText({ text: '😹', scalar });
+
+    let defaults = {
+    spread: 360,
+    ticks: 60,
+    gravity: 0,
+    decay: 0.96,
+    startVelocity: 15,
+    shapes: [unicorn],
+    scalar
+    };
+
+    function shoot() {
+    confetti({
+        ...defaults,
+        particleCount: 20
+    });
+
+    confetti({
+        ...defaults,
+        particleCount: 5,
+        flat: true
+    });
+
+    confetti({
+        ...defaults,
+        particleCount: 15,
+        scalar: scalar / 2,
+        shapes: ['circle']
+    });
+    }
+
+    setTimeout(shoot, 0);
+    setTimeout(shoot, 100);
+    setTimeout(shoot, 200);
+    setTimeout(shoot, 300);
   }
