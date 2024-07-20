@@ -1,12 +1,18 @@
 {
     "manifest_version": 3,
+    "author": "Mushroom Dev",
     "name": "Meowify",
     "version": "1.0",
-    "description": "Replaces all text on a webpage with 'meow' phrases and adds a cat image.",
+    "description": "Replaces all text on a webpage with 'meow' phrases.",
     "permissions": [
       "activeTab",
       "scripting"
     ],
+    "icons": {
+        "16": "/images/get_started16.png",        
+        "48": "/images/get_started48.png",
+        "128": "/images/get_started128.png"
+    },
     "action": {
       "default_popup": "popup.html"
     },

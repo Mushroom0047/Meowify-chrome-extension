@@ -1,0 +1,28 @@
+body {
+    width: 220px;
+    padding: 10px;
+    text-align: center;
+    background-color: #e5a7f7;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+.btn-grad {
+    background-image: linear-gradient(to right, #FEAC5E 0%, #C779D0  51%, #FEAC5E  100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+    
+.btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
