@@ -26,9 +26,9 @@ if (typeof confetti === 'function') {
     const existingImg = document.querySelector('img.cat-image-meowify');
   
     if (!existingImg) {
-      // Genera un número aleatorio entre 1 y 9
+      // Genera un número aleatorio entre 1 y 6
       let randomNumber = Math.floor(Math.random() * 6) + 1;
-      const imageUrl = `https://hectorvaldes.dev/meme-cats/meme-cat-extensionv2(${randomNumber}).webp`;
+      let imageUrl = chrome.runtime.getURL(`/images/meme-cat-extensionv2(${randomNumber}).webp`);
   
       // Crea la nueva imagen si no existe
       const img = document.createElement('img');
