@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Cat';
+    src: url('assets/QuietMeows-48jx.ttf') format('truetype'),
+        url('assets/QuietMeows-O20e.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+h1{
+    font-family: 'Cat', sans-serif;
+    letter-spacing: 8px;
+    font-size: 32px;
+    color: #000;
+}
 body {
     width: 220px;
     padding: 10px;
@@ -10,7 +23,6 @@ body {
 .btn-grad {
     background-image: linear-gradient(to right, #FEAC5E 0%, #C779D0  51%, #FEAC5E  100%);
     text-align: center;
-    text-transform: uppercase;
     transition: 0.5s;
     padding: 10px 20px;
     font-size: 14px;
